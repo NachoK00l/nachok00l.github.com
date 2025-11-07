@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles/style.css">
+        <script src="/js/animation.js" defer></script>
+        <script>
+        // Set which navbar item is selected for this page
+        const selectedNav = 'home';
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    // Set selected class
+                    const links = document.querySelectorAll('#navbar a[data-nav]');
+                    links.forEach(link => {
+                        if (link.getAttribute('data-nav') === selectedNav) {
+                            link.classList.add('selected');
+                        } else {
+                            link.classList.remove('selected');
+                        }
+                    });
+                });
+        });
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar-container">
+            <div id="navbar"></div>
+        </div>
+
+        <div class="hero">
+            <div class="hero-background"></div>
+            <div class="spacer"></div>
+            <h1 class="">nacho.cool</h1>
+            <p class="">Welcome!</p>
+            <p class="alternative-text">My cool site 😊</p>
+        </div>
+
+        <div class="card animateOnView">
+            <h2>Who am I?</h2>
+            <p>I am a developer who also dabbles into music creation, game development and robotics. If you want to see how I made something, check out my Blog Posts.</p>
+            <div class="button-container animateOnView">
+                <a href="./blog" class="primary-button">Blog</a>
+            </div>
+        </div>
+
+        <div class="card animateOnView">
+            <h2>Music</h2>
+            <p>Just like I said above, I like to dabble into some music creation. If you want to listen to my music or want to know what I use to make music, check out the Music page.</p>
+            <div class="button-container animateOnView">
+                <a href="./music.html" class="primary-button">Music</a>
+            </div>
+        </div>
+
+        <div class="card animateOnView">
+            <h2>Games</h2>
+            <p>I also like to make games in my free time. If you want to see some of the games I made, check out the Games page.</p>
+            <div class="button-container animateOnView">
+                <a href="./games.html" class="primary-button">Games</a>
+            </div>
+        </div>
+    </body>
+</html>

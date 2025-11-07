@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles/style.css">
+        <script src="/js/animation.js" defer></script>
+        <script>
+        // Set which navbar item is selected for this page
+        const selectedNav = 'music';
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    // Set selected class
+                    const links = document.querySelectorAll('#navbar a[data-nav]');
+                    links.forEach(link => {
+                        if (link.getAttribute('data-nav') === selectedNav) {
+                            link.classList.add('selected');
+                        } else {
+                            link.classList.remove('selected');
+                        }
+                    });
+                });
+        });
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar-container">
+            <div id="navbar"></div>
+        </div>
+
+        <div class="hero">
+            <div class="hero-background"></div>
+            <div class="spacer"></div>
+            <h1 class="">Music</h1>
+            <p class="">Some beats I made</p>
+            <p class="alternative-text">Bangers</p>
+        </div>
+
+        <div class="card animateOnView">
+            <h2>Where can I listen?</h2>
+            <p>Currently, the only place to listen to my music is on YouTube. On the nacho.music channel.</p>
+            <div class="button-container animateOnView">
+                <a href="https://www.youtube.com/@nachomusicofficial" target="_blank" class="primary-button">YouTube</a>
+            </div>
+        </div>
+
+        <div class="card animateOnView">
+            <h2>What equipment do you use?</h2>
+            <p>My DAW of choice is Ableton Live Standard. I only use a couple of VSTs, namely: </p>
+
+            <div class="button-container animateOnView" style="padding-bottom: 12px;">
+                <a class="primary-button" href="https://vital.audio/" target="_blank">Vital</a></li>
+                <a class="primary-button" href="https://www.tritik.com/product/krush/" target="_blank">Tritik Krush</a></li>
+                <a class="primary-button" href="https://github.com/a2aaron/nyasynth" target="_blank">Nyasynth</a></li>
+            </div>
+
+            <p>I also own an Ableton Push 3 controller, which has helped me a lot with making beats, but isn't really worth the price if you're just starting out.</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles/style.css">
+        <script src="/js/blog.js"></script>
+        <script src="/js/animation.js" defer></script>
+        <script>
+        // Set which navbar item is selected for this page
+        const selectedNav = 'blog';
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    // Set selected class
+                    const links = document.querySelectorAll('#navbar a[data-nav]');
+                    links.forEach(link => {
+                        if (link.getAttribute('data-nav') === selectedNav) {
+                            link.classList.add('selected');
+                        } else {
+                            link.classList.remove('selected');
+                        }
+                    });
+                });
+        });
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar-container">
+            <div id="navbar"></div>
+        </div>
+
+        <div class="hero">
+            <div class="hero-background"></div>
+            <div class="spacer"></div>
+            <h1>Blog Posts</h1>
+            <p>Here I talk about random stuff</p>
+            <p class="alternative-text">OMG A Blog!</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog cards will be injected here by JavaScript -->
+        </div>
+    </body>
+</html>
