@@ -4,5 +4,11 @@
     "description": "This is the first blog post. Welcome!",
     "date": "7/11/2025",
     "url": "/blog/posts/blogPost.html"
+  },
+  {
+    "title": "Cyberdeck Update 1",
+    "description": "Het begin van mijn cyberdeck",
+    "date": "2/5/2026",
+    "url": "/blog/posts/cyberdeckUpdate1.html"
   }
 ]
