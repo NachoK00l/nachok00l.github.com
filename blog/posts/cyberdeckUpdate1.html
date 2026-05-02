@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/animation.js" defer></script>
+    <script>
+        // Set which navbar item is selected for this page
+        const selectedNav = 'blog';
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    // Set selected class
+                    const links = document.querySelectorAll('#navbar a[data-nav]');
+                    links.forEach(link => {
+                        if (link.getAttribute('data-nav') === selectedNav) {
+                            link.classList.add('selected');
+                        } else {
+                            link.classList.remove('selected');
+                        }
+                    });
+                });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar-container">
+        <div id="navbar"></div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-background"></div>
+        <div class="spacer"></div>
+        <h1>Cyberdeck Update 1</h1>
+        <p>Het begin van mijn cyberdeck</p>
+        <p class="alternative-text">Date Time</p>
+    </div>
+
+    <div class="blog-container">
+        <div class="blog-content">
+            <p>Cyberdecks zijn populair op sociale media, maar hoe worden ze gemaakt? In deze blogpost toon ik
+                hoe ik ben begonnen met mijn eigen cyberdeck te ontwerpen. Misschien zal dit je inspireren om ook je
+                eigen cyberdeck te maken.</p>
+
+            <h2 id="begin">In het begin</h2>
+            <p>Ik was door YouTube aan het scrollen, zoals ik vaak doe, en ik zag deze video van Salim Benbouziyane. Hij
+                toonde hoe hij zijn geweldige cyberdeck had gemaakt en van dat punt wist ik dat ik er ook een MOEST
+                maken.</p>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/U5GZeMm5nhI?si=3V65iJCuWq04c_LX"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <p>Ik had geluk dat ik nog veel onderdelen had liggen van oude projecten. Dus ik had besloten om die te
+                hergebruiken.</p>
+
+            <h2 id="design">Ontwerp</h2>
+
+            <p>Ik begon eerst met mijn idee op papier te tekenen. Dit was gewoon een schets van wat ik ongeveer wou
+                maken, maar het idee is ondertussen al wat veranderd.</p>
+
+            <img src="./cyberdeckImages/image5.png" width="50%">
+
+            <p>Mijn cyberdeck is ontworpen om gebruikt te worden voor microcontrollers en hardware te ontwikkelen. Het
+                heeft alle GPIO pinnen van de RPI vrij aan de achterkant voor expansie kaarten en met microcontrollers
+                te communiceren. Ik heb ook een floppy disk drive aan de voorkant geplaatst omdat het past en leuk is.
+            </p>
+
+            <p>Het heeft wel geen batterij, maar ik kan gewoon een powerbank in de plaats gebruiken. Zo bespaar ik wat
+                dikte en 60 euro.</p>
+
+            <img src="./cyberdeckImages/image4.png" width="50%">
+
+            <h2 id="parts">Onderdelen</h2>
+
+            <p>Ik had al een Raspberry Pi 4 8GB en een scherm rond liggen. Wel handig met de RAM en SSD prijzen van nu…
+            </p>
+
+            <img src="cyberdeckImages/image8.png" width="40%">
+
+            <p>Het scherm dat ik had werkt wel met HDMI. Gelukkig kwam er een dunne HDMI kabel met het scherm. Het enige
+                probleem is dat die HDMI kabel niet flexibel genoeg was om 90° te draaien en te lang was. Ik heb dus
+                online een ribbon HDMI kabel moeten kopen.</p>
+
+            <img src="cyberdeckImages/image3.png" width="40%">
+
+            <h2 id="keyboard">Keyboard</h2>
+
+            <p>Het keyboard is een belangrijk gedeelte van deze cyberdeck. Ik had er een nodig met een ingebouwde
+                trackpad, dat niet te groot was, en genoeg toetsen had om te programmeren. Mijn eerste idee was een
+                toetsenbord van een Kano kit die ik nog had liggen.</p>
+
+            <img src="cyberdeckImages/image1.png" width="40%">
+
+            <p>Er is wel een klein probleempje… Ik heb de ontvanger niet meer. Mensen online zeggen dat je het met
+                bluetooth kan gebruiken, maar mijn model heeft dat niet. Een andere suggestie die de wijze mensen van
+                Reddit gaven, was om een e-mail te sturen naar Kano voor een vervanging. Ik denk dat je het al voelt
+                aankomen, maar hier was er ook een minuscule probleempje… Kano bestaat niet meer? Of toch niet hoe het
+                vroeger was. In 2023 is Kano gesplitst in Kano Computing en Kano World. Kano World gaat blijkbaar ook in
+                2024 weer open, dus ik kan niet wachten…</p>
+
+            <img src="cyberdeckImages/image7.png" width="60%">
+
+            <p>Ik heb dus het beste alternatief gepakt dat ik online kon vinden. De Rii K12+. Het is niet geweldig, maar
+                goed genoeg, zeker voor 27 euro.
+            </p>
+
+            <img src="cyberdeckImages/image6.png" width="40%">
+
+            <h2 id="cad">CAD Ontwerpen</h2>
+
+            <p>Ik ben nu bezig met de behuizing te maken in Fusion (360). Het is nog niet af, maar dit is wat ik al heb.
+                Dit is de onderkant.</p>
+
+            <img src="cyberdeckImages/image2.png" width="50%">
+
+            <p>Bedankt om te lezen. Ik hoop dat de volgende blogpost mijn cyberdeck af zal zijn. Ik hoop ook dat je je
+                nu geïnspireerd voelt om zelf een cyberdeck te maken.</p>
+        </div>
+
+        <div class="blog-index">
+            <h2>Index</h2>
+            <ul>
+                <li><a href="#begin">In het begin</a></li>
+                <li><a href="#design">Ontwerp</a></li>
+                <li><a href="#parts">Onderdelen</a></li>
+                <li><a href="#keyboard">Keyboard</a></li>
+                <li><a href="#cad">CAD Ontwerpen</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.blog-content img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function () {
+                    window.open(img.src, '_blank', 'noopener');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
