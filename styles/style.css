@@ -444,3 +444,53 @@ button {
         animation-play-state: running;
     }
 }
+
+/* ALTERNATIVE COLORS */
+
+.alex-button {
+    background: linear-gradient(90deg, #78866b 0%, #8fa37b 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin: 16px 8px 0px 8px;
+}
+
+.alex-button:hover {
+    box-shadow: 0 0 25px 1px #78866b;
+    transition-duration: 0.4s;
+}
+
+html.alex-theme {
+    color: white;
+    font-family: "SUSE Mono";
+    background-color: #080016;
+    opacity: 1;
+    background-image: repeating-linear-gradient(45deg, #1d211a 25%, transparent 25%, transparent 75%, #1d211a 75%, #1d211a), repeating-linear-gradient(45deg, #1d211a 25%, #060605 25%, #060605 75%, #1d211a 75%, #1d211a);
+    background-position: 0 0, 27px 27px;
+    background-size: 54px 54px;
+    text-align: center;
+}
+
+.alex-theme .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b0b0b;
+    opacity: 1;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #0b0b0b 40px), repeating-linear-gradient(#78866b55, #78866b);
+    z-index: 0;
+}
+
+.alex-theme ul.navbar li a.selected {
+    border-bottom: 1px solid rgba(150, 162, 139, 0.8);
+    background: linear-gradient(0deg, rgba(150, 162, 139, 0.4) 0%, rgba(150, 162, 139, 0.05) 100%);
+}

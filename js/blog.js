@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const blogGrid = document.querySelector('.blog-grid');
     if (!blogGrid) return;
 
@@ -16,13 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (Array.isArray(posts) && posts.length > 0) {
                 posts.forEach((post, idx) => {
                     console.log('Creating card for post:', post);
+                    const btnClass = (post && typeof post.buttonClass === 'string' && post.buttonClass.trim().length > 0)
+                        ? post.buttonClass
+                        : 'primary-button';
                     const card = document.createElement('div');
                     card.className = 'blog-card animateOnView';
                     card.innerHTML = `
                         <h2>${post.title}</h2>
                         <p class="blog-date">${post.date}</p>
                         <p class="blog-summary">${post.description}</p>
-                        <a href="${post.url}" class="primary-button">Read More</a>
+                        <a href="${post.url}" class="${btnClass}">Read More</a>
                     `;
                     blogGrid.appendChild(card);
                     if (window.animateOnViewObserver) {
