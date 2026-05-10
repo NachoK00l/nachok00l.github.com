@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="ioannis-theme">
+
+<head>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/animation.js" defer></script>
+    <script>
+        // Set which navbar item is selected for this page
+        const selectedNav = 'blog';
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    // Set selected class
+                    const links = document.querySelectorAll('#navbar a[data-nav]');
+                    links.forEach(link => {
+                        if (link.getAttribute('data-nav') === selectedNav) {
+                            link.classList.add('selected');
+                        } else {
+                            link.classList.remove('selected');
+                        }
+                    });
+                });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar-container">
+        <div id="navbar"></div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-background"></div>
+        <div class="spacer"></div>
+        <h1>Thermal Tinker</h1>
+        <p>Ioannis Daskalopoulos</p>
+        <p class="alternative-text">10/5/2026 16:10</p>
+    </div>
+
+    <div class="blog-container">
+        <div class="blog-content">
+            <h2 id="het-probleem">Het probleem</h2>
+
+            <p>Soms koop je hardware voor op een manier te gebruiken waar het niet echt voor gemaakt is.</p>
+
+            <p>Ik had speciaal een secundaire router gekocht om beelden te streamen naar mijn VR-headset. Niet zomaar
+                voor wifi in huis, maar specifiek voor stabiele, lage latency streaming. In het begin werkte dat
+                perfect.</p>
+
+            <p>Tot na ongeveer dertig minuten.</p>
+
+            <p>Dan begonnen er rare problemen op te duiken. Niet echt “lag”, maar eerder alsof een YouTube-video
+                constant even moest bufferen. Het beeld werd plots blurry en gepixeld, om daarna terug normaal te
+                worden. Eerst dacht ik dat ik misschien te ver van de router zat, of dat iets het signaal verstoorde.
+            </p>
+
+            <p>Maar DAN voelde ik de router. Dat ding was heel heet. Dus probeerde ik iets domsimpels: een ventilator
+                erop laten blazen. En plots werkte alles weer perfect. Dus ja… de router was gewoon aan het overhitten.
+            </p>
+
+            <p>Voor een lange tijd gebruikte ik hem letterlijk met een aparte ventilator die er elke keer naar keek
+                zodat hij niet oververhitte. Super professionele oplossing natuurlijk.</p>
+
+            <p>Maar dit weekend besloot ik eindelijk iets leukers te doen.</p>
+
+            <h2>Het begin van mijn router-mod</h2>
+
+            <p>Dat betekende dus: warranty voiden, de router open schroeven en met een multimeter op een vreemde PCB
+                beginnen meten.</p>
+
+            <img src="./thermalTinkerImages/image7.png" width="40%">
+
+            <p>Alleen… voor ik eraan kon meten, moest ik het ding nog open krijgen.</p>
+
+            <p>En blijkbaar had de ontwerper van deze router persoonlijke haat tegenover iedereen met nieuwsgierigheid.
+            </p>
+
+            <p>Er zaten TWAALF interne klemmen in.</p>
+
+            <img src="./thermalTinkerImages/image4.png" width="60%">
+
+            <p>Elke keer als ik met een platte schroevendraaier één klem open wrikte en de tool eruit haalde, klikte die
+                gewoon direct terug dicht door de druk van de andere honderd klemmen. Uiteindelijk moest ik vier metalen
+                openingtools tegelijk gebruiken om het ding open te houden.</p>
+
+            <p>Zelfs dan ging het nog met moeite.</p>
+
+            <p>Na veel gevecht met het plastic object en lichte schade aan de behuizing, was de router eindelijk open.
+            </p>
+
+            <img src="./thermalTinkerImages/image3.png" width="60%">
+
+            <p>Eenmaal binnen wist ik eigenlijk direct waar ik de stroom van kon halen. De PCB had een DC-connector waar
+                2 terminals verbonden waren, met daarover ongeveer 12 volt. Ik moest gewoon meten met de multimeter om
+                zeker de juiste polariteit te hebben.</p>
+
+            <p>Maar ik wou natuurlijk niet dat de ventilator altijd draaide. Ik wou dat de fan alleen aanging wanneer de
+                router aan stond.</p>
+
+            <p>Dus het plan werd:</p>
+
+            <ul>
+                <li>GND van de fan aansluiten op de GND van de DC-input</li>
+                <li>VCC van de fan aansluiten op de switch</li>
+            </ul>
+
+            <p>Voor ik iets soldeerde, begon ik eerst alles te meten. Het eerste wat ik controleerde was de spanning van
+                de DC-input:</p>
+
+            <ul>
+                <li>Router uit: ~12.2V</li>
+                <li>Router aan, geen belasting: ~11.9V</li>
+                <li>Router aan met internet en twee apparaten verbonden: ~11.9V</li>
+                <li>Router onder zware VR-streaming belasting: ~11.9V</li>
+            </ul>
+
+            <p>De spanning bleef dus extreem stabiel.</p>
+
+            <img src="./thermalTinkerImages/image1.png" width="60%">
+
+            <p>Het enige dat echt veranderde, was de temperatuur van de heatsink. En dat verschil was heel duidelijk.
+                Dus concludeerde ik dat de voeding totaal niet dicht bij zijn limiet zat. De power supply kon 1.5A
+                leveren, dus stroom genoeg.</p>
+
+            <p>Daarna testte ik ook de brushless fan zelf. Met een multimeter ertussen en wat hulp van mijn broer’s
+                extra paar handen meten ik ongeveer 120mA bij het opstarten, waarna die stabiliseerde rond ~95mA. Dus
+                ja, mijn idee was perfect haalbaar.</p>
+
+            <p>Tijdens het testen ontdekte ik nog iets vreemds. Over de GND en de switch stond ongeveer 2V wanneer de
+                router uit was. Dat maakte me even verward. Maar ik concludeerde wel vrij snel dat het waarschijnlijk
+                gewoon restspanning in een condensator was. Voor de motor maakte dat niets uit: de ventilator zou gewoon
+                niet draaien en niets zou beschadigd worden.</p>
+
+            <p>Dat was dag één.</p>
+
+            <p>Eigenlijk was ik er niet eens zo lang mee bezig, omdat ik die dag nog andere plannen had. Als je ervaring
+                hebt met hardware en ook iets gelijkaardigs zou proberen, zou dit project zeker zelfs op 1 dag afgewerkt
+                kunnen zijn.</p>
+
+            <h2 id="router-mod-montage">Router mod montage</h2>
+
+            <p>Dag twee begon met het monteren van de fan. Ik bevestigde hem aan de buitenkant van de router met
+                zip-ties, vlak naast de ventilatiegaten die oorspronkelijk bedoeld waren voor passive cooling. Daarna
+                duwde ik de twee kabels via de vent-openingen naar binnen.</p>
+
+            <img src="./thermalTinkerImages/image2.png" width="60%">
+
+            <p>Dan kwam het solderen. De twee grote aansluitpunten waren gelukkig vrij gemakkelijk, maar de draad aan de
+                switch was iets minder leuk. Die zat half onder een ander metaal stuk en het oppervlak warmde moeilijk
+                op, waardoor de draad niet goed wou blijven vastzitten. Maar uiteindelijk lukte het.</p>
+
+            <img src="./thermalTinkerImages/image6.png" width="60%">
+
+            <p>En toen kwam het beste moment van het hele project. Ik flikte de switch aan…</p>
+            <p>…en de fan begon direct te draaien.</p>
+            <p>Ik was eerlijk gezegd extatisch. Mijn eerste echte hardware mod, en
+                het werkte gewoon perfect. Na het testen met belasting, werkte het perfect. Gewoon een klein beetje
+                luchtstroom door de behuizing maakte al een gigantisch verschil.</p>
+
+            <p>En eigenlijk is dat logisch. De router ging van puur warmte uitstralen… naar effectief warmte wegblazen.
+            </p>
+
+            <p>Wat ik het leukste vind aan dit soort projecten, is dat je niet gewoon iets repareert. Je begrijpt ook
+                beter hoe hardware echt werkt. En dat gevoel wanneer een idee dat volledig in je hoofd begon
+                uiteindelijk echt werkt? Dat is moeilijk te overtreffen.</p>
+
+            <img src="./thermalTinkerImages/image5.png" width="60%">
+        </div>
+
+        <div class="blog-index">
+            <h2>Index</h2>
+            <ul>
+                <li><a href="#het-probleem">Het probleem</a></li>
+                <li><a href="#router-mod-montage">Router mod montage</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.blog-content img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function () {
+                    window.open(img.src, '_blank', 'noopener');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
