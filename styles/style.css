@@ -208,7 +208,7 @@ ul.navbar li a:hover {
     animation-timing-function: ease;
     animation-delay: 0.15s;
     animation-fill-mode: both;
-    animation-play-state: paused;
+    animation-play-state: running;
 }
 
 .card h2 {
@@ -273,7 +273,7 @@ button {
     animation-duration: 0.3s;
     animation-timing-function: ease;
     animation-fill-mode: both;
-    animation-play-state: paused;
+    animation-play-state: running;
 }
 
 /* BLOG */
@@ -385,7 +385,7 @@ button {
     animation-timing-function: ease;
     animation-delay: 0.15s;
     animation-fill-mode: both;
-    animation-play-state: paused;
+    animation-play-state: running;
 }
 
 .blog-card h2 {
