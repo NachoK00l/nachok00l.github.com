@@ -441,7 +441,8 @@ button {
 /* ANIMATION ON VIEWPORT ENTER */
 @media (prefers-reduced-motion: no-preference) {
     .in-view {
-        animation-play-state: running;
+        animation-play-state: running !important;
+        /* Force animation restart */
     }
 }
 
