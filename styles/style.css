@@ -401,6 +401,10 @@ button {
     /* Removes flicker before animation starts */
 }
 
+img {
+    border-radius: 16px;
+}
+
 /* ANIMATIONS */
 @keyframes bounceAndFadeIn {
     from {
