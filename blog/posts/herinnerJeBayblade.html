@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="nischal-theme">
+
+<head>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/animation.js" defer></script>
+    <script>
+        // Set which navbar item is selected for this page
+        const selectedNav = 'blog';
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                    // Set selected class
+                    const links = document.querySelectorAll('#navbar a[data-nav]');
+                    links.forEach(link => {
+                        if (link.getAttribute('data-nav') === selectedNav) {
+                            link.classList.add('selected');
+                        } else {
+                            link.classList.remove('selected');
+                        }
+                    });
+                });
+        });
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar-container">
+        <div id="navbar"></div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-background"></div>
+        <div class="spacer"></div>
+        <h1>Herinner je Beyblade nog?</h1>
+        <p>Nischal Gurung</p>
+        <p class="alternative-text">10/5/2026 18:34</p>
+    </div>
+
+    <div class="blog-container">
+        <div class="blog-content">
+            <p>Heb jij vroeger een Beyblade gehad en ermee gespeeld? Ik wel, het waren spannende tijden vol epische
+                gevechten, alleen of met vrienden. Voor sommigen was het gewoon speelgoed, maar voor fans voelde het als
+                een echte sport. Als je weer geïnteresseerd bent en de hobby weer wilt oppakken, dan is dit blog perfect
+                om je er weer in te laten stappen. Eerst moet je dus de basis natuurlijk kennen, dus de verschillende
+                types van Beyblades, welke generaties er zijn en hoe dat ze werken.</p>
+
+            <h2 id="regels">Regels</h2>
+
+            <p>Regels hangen af van welk generatie van Beyblades vechten.</p>
+            <p>Net voordat je begint je Beyblade te lanceren roep je “3, 2, 1, Let it rip!” zodat 2 tegenstanders op
+                hetzelfde moment kunnen lanceren.</p>
+
+            <p>1<sup>ste</sup> en 2<sup>de</sup> generatie (tot 3 punten)</p>
+            <ul>
+                <li>Beyblade dat het laatst blijft draaien (1 punt)</li>
+                <li>Beyblade dat een ander uit de arena laat vallen (1 punt)</li>
+            </ul>
+
+            <p>3<sup>de</sup> generatie (tot 3 punten)</p>
+
+            <ul>
+                <li>Beyblade dat het laatst blijft draaien (1 punt)</li>
+                <li>Beyblade dat een ander uit de arena laat vallen (1 punt)</li>
+                <li>Beyblade laten barsten (2 punten)</li>
+            </ul>
+
+            <img src="./herinnerJeBeybladeImages/image1.gif" width="50%">
+
+            <p>4<sup>de</sup> generatie (tot 4 punten)</p>
+
+            <ul>
+                <li>Beyblade dat het laatst blijft draaien (1 punt)</li>
+                <li>Beyblade dat een ander uit de arena laat vallen (2 punt)</li>
+                <li>Beyblade laten barsten (2 punten)</li>
+                <li>Beyblade dat een ander in een speciaal hokje laten vallen (3 punten)</li>
+            </ul>
+
+            <img src="./herinnerJeBeybladeImages/image2.gif" width="50%">
+
+            <h2 id="types">Type Beyblades</h2>
+
+            <p>We zullen beginnen met de verschillende types. Er zijn er 4 in totaal Aanval, Uithoudingsvermogen,
+                Verdediging en Balans.</p>
+
+            <img src="./herinnerJeBeybladeImages/image3.jpeg" width="50%">
+
+            <p>Het concept is dus vergelijkbaar met Schaar, Steen, Papier. Waar de ene een voordeel heeft aan de ander.
+            </p>
+
+            <img src="./herinnerJeBeybladeImages/image5.jpeg" width="50%">
+
+            <p>Beyblades zijn heel aanpasbaar, ze zijn in lagen verdeeld en je kunt ze aanpassen hoe je maar wilt.</p>
+
+            <img src="./herinnerJeBeybladeImages/image4.jpeg" width="40%">
+
+            <p>Beyblades kunnen met de klok mee draaien of tegen de klok in. (Rechts of links dus)</p>
+
+            <p>Rechts (Klok mee)</p>
+
+            <img src="./herinnerJeBeybladeImages/image6.gif" width="50%">
+
+            <p>Links (Tegen de klok)</p>
+
+            <img src="./herinnerJeBeybladeImages/image7.gif" width="50%">
+
+            <h2 id="aanval-types">Aanval types</h2>
+
+            <p>Aanval types focussen volop aanvallen zoals de naam het zegt, ze hebben allemaal asymmetrische vormen om
+                scherpe hoeken te creëren. Door die scherpe hoeken kunnen ze heftige stoten geven. Ze hebben een
+                voordeel aan Uithoudingsvermogen omdat ze niet goed zijn in het verdedigen, maar een nadeel aan
+                Verdedigings Beyblades, omdat ze goed tegen aanvallen kunnen. Een van de belangrijkste kenmerken van een
+                Aanval type is dat het zeer snel is, zo kunnen ze dus heel krachtig zijn.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image8.jpeg" width="100%">
+                    <p>1<sup>ste</sup> generatie</p>
+                </div>
+
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image9.jpeg" width="100%">
+                    <p>2<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image10.jpeg" width="100%">
+                    <p>3<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image11.png" width="100%">
+                    <p>4<sup>de</sup> generatie</p>
+                </div>
+            </div>
+
+            <h2 id="uithoudingsvermogen-types">Uithoudingsvermogen types</h2>
+
+            <p>Uithoudingsvermogen types focussen op conditie, ze blijven dus zo lang mogelijk draaien om zo een gevecht
+                te winnen. Enkele kenmerken van een uithoudingsvermogen Beyblade zijn: Een ronde vorm, zo weinig
+                mogelijk wrijving met de arena en symmetrie. Ze hebben een voordeel aan Verdedigings Beyblades omdat ze
+                niet veel aanvallen, maar een nadeel aan Aanval Beyblades.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image12.png" width="100%">
+                    <p>1<sup>ste</sup> generatie</p>
+                </div>
+
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image13.png" width="100%">
+                    <p>2<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image14.png" width="100%">
+                    <p>3<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image15.jpeg" width="100%">
+                    <p>4<sup>de</sup> generatie</p>
+                </div>
+            </div>
+
+            <h2 id="verdedigings-types">Verdedigings types</h2>
+
+            <p>Verdedigings types focussen compleet op het verdedigen en reflecteren van grote stoten. De belangrijkste
+                kenmerken zijn: Zwaar gewicht, stabiele posities, tegenaanvallen. Zwaar gewicht zorgt ervoor dat de
+                Beyblade in het midden blijft zodat hij niet uit de arena valt. Ze hebben een voordeel aan Aanval types
+                en een nadeel aan Uithoudingsvermogen types.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image16.jpeg" width="100%">
+                    <p>1<sup>ste</sup> generatie</p>
+                </div>
+
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image17.jpeg" width="100%">
+                    <p>2<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image18.jpeg" width="100%">
+                    <p>3<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image19.jpeg" width="100%">
+                    <p>4<sup>de</sup> generatie</p>
+                </div>
+            </div>
+
+            <h2 id="balans-types">Balans types</h2>
+
+            <p>Uiteindelijk hebben we de Balans types, er is geen definitief samenvatting van een Balans type, omdat de
+                kenmerken kunnen afhangen. Balans types kunnen een combinatie zijn van 2 verschillende types of zelfs
+                meer. Ze kunnen dus de kenmerken van verschillende types hebben, bijvoorbeeld: Ze kunnen conditie
+                behouden en ook aanvallen wanneer nodig is.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image20.jpeg" width="100%">
+                    <p>1<sup>ste</sup> generatie</p>
+                </div>
+
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image21.jpeg" width="100%">
+                    <p>2<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image22.jpeg" width="100%">
+                    <p>3<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image23.jpeg" width="100%">
+                    <p>4<sup>de</sup> generatie</p>
+                </div>
+            </div>
+
+            <p>De Beyblade draaien doen we natuurlijk niet met onze handen.</p>
+
+            <p>Daarvoor hebben we een apparaat nodig, die apparaat heet dus de Bey Launcher. Maar afgekort is Launcher
+                ook mogelijk. Er zijn verschillende soorten Launchers, met een draad en met een apart trekkoord. Ze
+                hebben beiden hun voor- en nadelen.</p>
+
+            <h2 id="de-string-launcher">De String Launcher</h2>
+
+            <img src="./herinnerJeBeybladeImages/image24.jpeg" width="40%">
+
+            <p>De String Launcher is een Launcher met een draad/koord dat je steeds aan kunt trekken. Het zorgt voor
+                controle van de Beyblade door niet te veel, maar genoeg kracht te geven aan de Beyblade zodat het niet
+                te snel draait en uit de arena valt.</p>
+
+            <h2 id="de-ripcord-launcher">De Ripcord Launcher</h2>
+
+            <img src="./herinnerJeBeybladeImages/image25.jpeg" width="40%">
+
+            <p>De Ripcord Launcher is een Launcher met een apart koord dat je weer moet insteken. Het heeft minder
+                controle, maar geeft de Beyblade maximumkracht. Het enige nadeel is dat de Beyblade uit de arena kan
+                vallen door te snel te draaien.
+            </p>
+
+            <h2 id="beyblade-arenas">Beyblade Arena’s</h2>
+
+            <p>Beyblade Arena’s blijven best wel consistent in alle generaties.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image26.jpeg" width="100%">
+                    <p>1<sup>ste</sup> generatie</p>
+                </div>
+
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image27.jpeg" width="100%">
+                    <p>2<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image28.png" width="100%">
+                    <p>3<sup>de</sup> generatie</p>
+                </div>
+                <div style="flex: 1 1 10%;">
+                    <img src="./herinnerJeBeybladeImages/image29.jpeg" width="100%">
+                    <p>4<sup>de</sup> generatie</p>
+                </div>
+            </div>
+
+            <p>Nu weet je hoe de spelregels en types van Beyblade werken. Misschien kijk je er nu anders naar. Niet als
+                speelgoed, maar als een echte hobby.</p>
+
+            <img src="./herinnerJeBeybladeImages/image30.gif" width="50%">
+
+        </div>
+
+        <div class="blog-index">
+            <h2>Index</h2>
+            <ul>
+                <li><a href="#regels">Regels</a></li>
+                <li><a href="#types">Types</a></li>
+                <li><a href="#aanval-types">Aanval types</a></li>
+                <li><a href="#uithoudingsvermogen-types">Uithoudingsvermogen types</a></li>
+                <li><a href="#verdedigings-types">Verdedigings types</a></li>
+                <li><a href="#balans-types">Balans types</a></li>
+                <li><a href="#de-string-launcher">De String Launcher</a></li>
+                <li><a href="#de-ripcord-launcher">De Ripcord Launcher</a></li>
+                <li><a href="#beyblade-arenas">Beyblade Arena’s</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.blog-content img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function () {
+                    window.open(img.src, '_blank', 'noopener');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
