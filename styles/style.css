@@ -544,3 +544,52 @@ html.ioannis-theme {
     border-bottom: 1px solid rgba(117, 193, 255, 0.8);
     background: linear-gradient(0deg, rgba(83, 178, 255, 0.4) 0%, rgba(3, 140, 252, 0.05) 100%);
 }
+
+/* NISCHAL THEME */
+.nischal-button {
+    background: linear-gradient(90deg, #bcb874 0%, #e4d596 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin: 16px 8px 0px 8px;
+}
+
+.nischal-button:hover {
+    box-shadow: 0 0 25px 1px #bcb874;
+    transition-duration: 0.4s;
+}
+
+html.nischal-theme {
+    color: white;
+    font-family: "SUSE Mono";
+    background-color: #080016;
+    opacity: 1;
+    background-image: repeating-linear-gradient(45deg, #32311f 25%, transparent 25%, transparent 75%, #32311f 75%, #32311f), repeating-linear-gradient(45deg, #32311f 25%, #080804 25%, #080804 75%, #32311f 75%, #32311f);
+    background-position: 0 0, 27px 27px;
+    background-size: 54px 54px;
+    text-align: center;
+}
+
+.nischal-theme .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0b0b0b;
+    opacity: 1;
+    background-image: repeating-radial-gradient(circle at 0 0, #0b0b0b 0px, #bcb874 1px, #0b0b0b 40px);
+    z-index: 0;
+}
+
+.nischal-theme ul.navbar li a.selected {
+    border-bottom: 1px solid rgba(255, 250, 160, 0.8);
+    background: linear-gradient(0deg, rgba(255, 250, 160, 0.4) 0%, rgba(250, 248, 203, 0.05) 100%);
+}
